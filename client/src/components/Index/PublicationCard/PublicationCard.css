@@ -1,0 +1,97 @@
+.publi-card-container {
+  border-radius: 5px;
+  border: solid 1px var(--grey);
+  overflow: hidden;
+  width: 100%;
+}
+
+.publi-card-container .card-header {
+  background-color: var(--white);
+  padding: 0.5rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.publi-card-container .card-header .profile-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9em;
+}
+
+.publi-card-container .card-header .profile-info .publi-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.publi-card-container .card-picture {
+  height: 15rem;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+.publi-card-container .card-picture img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.publi-card-container .card-content {
+  background-color: var(--white);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.publi-card-container .card-content .content-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 6rem;
+}
+
+.publi-card-container .card-footer {
+  height: 3rem;
+  border-top: solid 1px var(--grey);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.publi-card-container .card-footer .btn-publi {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.publi-card-container .see-more-link {
+  font-weight: 600;
+  text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+  .publi-card-container {
+    width: 75vw;
+  }
+
+  .publi-card-container .card-picture {
+    background-color: #000000;
+  }
+
+  .publi-card-container .card-picture {
+    height: 20rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .publi-card-container {
+    width: 50vw;
+  }
+}

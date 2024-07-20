@@ -1,165 +1,223 @@
-body {
-  font-family: "Lato", sans-serif;
+:root {
+  --primary-font: "Roboto";
+  --white: #fbfbfb;
+  --black: #282828;
+  --light-grey: #f3f3f3;
+  --grey: #d8d8d8;
+  --dark-grey: #6e6e6e;
+  --black-transparent: rgba(28, 28, 28, 0.4);
+  --primary-color: #3e9bbc;
+  --primary-color-light: #70adc3;
+  --primary-dark-color: #2c6d85;
+  --secondary-color: #0e4166;
+  --third-color: #082439;
+  --shadow-container: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --light-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #eee;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--primary-font);
+  background-color: var(--light-grey);
+  color: var(--black);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
-.container {
-  height: 100vh;
-  background-image: url("./assets/images/background.webp");
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 30px;
-}
-
-.logo {
-  font-size: 20px;
-  margin-top: 16px;
-}
-
-.navbar ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-.navbar a {
+a {
+  color: inherit;
   text-decoration: none;
-  color: #eee;
-  display: flex;
-  gap: 5px;
-  justify-content: end;
-  margin-top: auto;
-  font-size: 15px;
-}
-
-.navbar a:hover {
-  scale: 110%;
-}
-
-.text-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.block-primary {
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-
-.block-primary-main {
-  font-size: 50px;
-  font-weight: 400;
-  letter-spacing: 5px;
-  animation: blink 12s infinite;
-}
-
-.block-primary-sub {
   display: block;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 7px;
 }
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 10px 20px;
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* ----------------- Decoration ----------------- */
+.underline {
+  text-decoration: underline;
+}
+
+.hoverunderline:hover {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.error {
+  color: rgb(255, 0, 0);
+}
+
+/* ----------------- Button ----------------- */
+.no-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.burger-btn {
+  height: 35px;
+  width: 35px;
+}
+
+.burger-btn img {
+  height: 35px;
+  width: 35px;
+}
+
+.btn {
+  cursor: pointer;
+  outline: 0;
+  color: #fff;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   display: inline-block;
-  border-radius: 100px;
-  transition: all 0.2s;
-  position: relative;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 0.25rem;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  background-color: var(--primary-dark-color);
+  border-color: var(--primary-dark-color);
 }
 
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+.btn-filled {
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
-.btn-white {
-  background-color: #fff;
-  color: #777;
-  font-size: 14px;
+.btn-filled:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
-footer {
+.btn.green {
+  background-color: rgb(29, 187, 8);
+}
+
+.btn.green:hover {
+  background-color: rgb(58, 154, 46);
+  border-color: rgb(58, 154, 46);
+}
+
+.btn.red {
+  background-color: rgb(214, 47, 47);
+}
+
+.btn.red:hover {
+  background-color: rgb(169, 38, 38);
+  border-color: rgb(169, 38, 38);
+}
+
+/* ----------------- Input ----------------- */
+.input {
+  outline: none;
+  height: 2rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 0 1rem;
+  width: 13rem;
+}
+
+.input.icon {
+  padding-right: 3rem;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
   position: absolute;
-  top: 85%;
-  left: 75%;
+  color: #545454;
+  right: 1rem;
 }
 
-.wcs {
-  text-decoration: none;
-  color: #ff1493ad;
+.input.date {
+  width: 13rem;
 }
 
-.wcs:hover {
-  border-bottom: solid 1px #ff1493ad;
+.input.select {
+  width: 13rem;
 }
 
-@media screen and (max-width: 760px) {
-  .logo {
-    display: none;
-  }
-
-  .container {
-    justify-content: center;
-  }
-
-  footer {
-    position: absolute;
-    top: 85%;
-    left: 20%;
-  }
+.input.default {
+  color: #707070;
 }
 
-@media screen and (min-width: 761px) and (max-width: 960px) {
-  footer {
-    position: absolute;
-    top: 85%;
-    left: 60%;
-  }
+.input.selected {
+  color: var(--black);
 }
 
-@keyframes blink {
-  20%,
-  24%,
-  55% {
-    color: #111;
-    text-shadow: none;
-  }
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    text-shadow:
-      0 0 5px #ff1493ad,
-      0 0 15px #eee,
-      0 0 20px #ff1493ad,
-      0 0 40px #a00ac9,
-      0 0 60px #ff0000,
-      0 0 10px #970dc5,
-      0 0 98px #ff0000;
-    color: #fff;
-  }
+/* ----------------- Checkbox ----------------- */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.css-zztjvv-MuiButtonBase-root-MuiCheckbox-root {
+  padding: 0 !important;
 }

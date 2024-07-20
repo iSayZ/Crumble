@@ -1,0 +1,197 @@
+.input-container.search {
+  display: none;
+}
+
+.top-bar-index .btn-container.desktop {
+  display: none;
+}
+
+.sticky-bar {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+}
+
+.top-bar-index {
+  width: 100%;
+  height: 3rem;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+
+.top-bar-index .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-bar-index .logo img {
+  height: 35px;
+  width: 35px;
+}
+
+.top-bar-index h2 {
+  font-size: 1.2em;
+}
+
+.top-bar-index .btn-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-bar-btn {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar-btn:hover {
+  background-color: var(--primary-color-light);
+}
+
+.top-bar-btn.search img {
+  height: 25px;
+  width: 25px;
+}
+
+.top-bar-nav {
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.top-bar-nav hr {
+  height: 70%;
+}
+
+.btn-nav {
+  position: relative;
+}
+
+.btn-nav .bubble,
+.top-bar-btn .bubble {
+  position: absolute;
+  background-color: red;
+  color: var(--white);
+  font-size: 0.8em;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -5px;
+  right: -5px;
+}
+
+.search-mobil {
+  width: 100%;
+  position: relative;
+  display: none;
+}
+
+.search-mobil.open {
+  display: block;
+}
+
+.input-icon-search {
+  position: absolute;
+  right: 1rem;
+  top: 0.2rem;
+}
+
+.input-search-mobil {
+  width: 100%;
+  height: 2rem;
+  border: none;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding-right: 3rem;
+  padding-left: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .sticky-bar {
+    position: inherit;
+  }
+
+  .top-bar-index .btn-container.mobil {
+    display: none;
+  }
+
+  .top-bar-nav {
+    display: none;
+  }
+
+  .search-mobil {
+    display: none;
+  }
+
+  .input-container.search {
+    display: block;
+  }
+
+  .top-bar-index .btn-container.desktop {
+    display: flex;
+  }
+
+  .top-bar-index {
+    height: 4rem;
+  }
+
+  .top-bar-index .logo {
+    gap: 0.8rem;
+  }
+
+  .top-bar-index .logo img {
+    height: 45px;
+    width: 45px;
+  }
+
+  .top-bar-index h2 {
+    font-size: 1.4em;
+  }
+
+  .top-bar-btn {
+    width: 38px;
+    height: 38px;
+    position: relative;
+  }
+
+  .top-bar-btn .bubble {
+    top: -5px;
+    right: -5px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .input.search {
+    height: 1.7rem;
+    width: 15rem;
+    padding-right: 2.3rem;
+  }
+
+  .input-icon-search {
+    position: absolute;
+    color: #545454;
+    top: 0.1rem;
+    right: 0.5rem;
+  }
+}
