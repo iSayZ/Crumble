@@ -11,24 +11,18 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install expect
-      run: sudo apt-get install -y expect
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        known_hosts: ${{ secrets.KNOWN_HOSTS }}
 
     - name: Deploy to VPS
       run: |
-        expect <<EOF
-        set timeout -1
-        spawn ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }}
-        expect "*?assword:*"
-        send -- "${{ secrets.SSH_PASSWORD }}\r"
-        interact
-        EOF
+        timeout 60s ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} <<EOF
+        echo "Connected successfully"
         cd ${{ secrets.PROJECT_PATH }}
         git pull origin main
-        docker compose down
-        docker compose up -d --build
-      env:
-        SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
-        USERNAME: ${{ secrets.USERNAME }}
-        HOST: ${{ secrets.HOST }}
-        PROJECT_PATH: ${{ secrets.PROJECT_PATH }}
+        docker-compose down
+        docker-compose up -d --build
+        EOF
