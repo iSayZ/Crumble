@@ -14,11 +14,11 @@ jobs:
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        known_hosts: ${{ secrets.KNOWN_HOSTS }}
-    
+        known_hosts: github.com
+
     - name: Deploy to VPS
       run: |
-        timeout 120s ssh -vvv -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
+        timeout 120s ssh -i ~/.ssh/id_rsa -vvv -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
           echo "Connected successfully"
           cd ${{ secrets.PROJECT_PATH }}
           git pull origin main
