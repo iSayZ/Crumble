@@ -19,7 +19,7 @@ jobs:
 
     - name: Deploy to VPS
       run: |
-        timeout 60s ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} <<EOF
+        timeout 60s ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.USERNAME }}@${{ secrets.HOST }} <<EOF
         echo "Connected successfully"
         cd ${{ secrets.PROJECT_PATH }}
         git pull origin main
