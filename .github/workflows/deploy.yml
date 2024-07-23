@@ -16,10 +16,16 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
         name: id_rsa
+        if_key_exists: replace
+
+    - name: Check SSH key
+      run: |
+        ls -l ~/.ssh
+        ssh-keygen -l -f ~/.ssh/id_rsa
 
     - name: Debug SSH connection
       run: |
-        ssh -v -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'echo "SSH connection successful"'
+        ssh -vvv -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'echo "SSH connection successful"'
 
     - name: Deploy with rsync
       run: |
