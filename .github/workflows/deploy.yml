@@ -15,7 +15,7 @@ jobs:
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
-        name: id_rsa  # ou id_ed25519 si vous utilisez une clé ED25519
+        name: id_ed25519
 
     - name: Debug SSH
       run: |
