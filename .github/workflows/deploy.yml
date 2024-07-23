@@ -17,17 +17,13 @@ jobs:
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
         name: id_rsa
 
-    - name: Debug SSH
+    - name: Debug SSH connection
       run: |
-        ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
-        ssh -v ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'echo "SSH connection successful"'
-
-    - name: Install sshpass
-      run: sudo apt-get install sshpass
+        ssh -v -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'echo "SSH connection successful"'
 
     - name: Deploy with rsync
       run: |
-        sshpass -p ${{ secrets.SSH_PASSWORD }} rsync -avz -e "ssh -o StrictHostKeyChecking=no" --delete ./ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.PROJECT_PATH }}
+        rsync -avz -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete ./ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.PROJECT_PATH }}
 
     - name: Execute remote SSH commands
       uses: appleboy/ssh-action@master
