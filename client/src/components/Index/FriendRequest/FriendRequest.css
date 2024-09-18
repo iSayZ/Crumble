@@ -1,0 +1,59 @@
+.friend-request {
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: var(--light-shadow);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 27rem;
+}
+
+.friend-request-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.friend-request-header .user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.friend-request-header .user-info p {
+  font-size: 0.75em;
+}
+
+.friend-request-header .request-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.friend-request-header .request-date {
+  font-size: 0.75em;
+}
+
+.friend-request-btn {
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+}
+
+.friend-request-btn .btn {
+  padding: 0 0.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .friend-request-header a.user-info {
+    font-size: 0.9em;
+  }
+}

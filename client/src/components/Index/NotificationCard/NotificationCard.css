@@ -1,0 +1,44 @@
+.notification-card {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
+  border-radius: 2.5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification-close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5px;
+  cursor: pointer;
+}
+
+.notification-date {
+  font-size: 0.8em;
+}
+
+.notification-close-btn:hover {
+  background-color: var(--grey);
+}
+
+.notification-content {
+  margin-right: 1.5rem;
+}
+
+.notification-content .publication-link {
+  text-decoration: underline;
+  font-weight: 600;
+  display: inline;
+}
+
+.notification-content .notification-source {
+  vertical-align: middle;
+  margin-left: 0.3rem;
+}

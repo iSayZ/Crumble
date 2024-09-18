@@ -1,0 +1,74 @@
+.publi-card {
+  width: 100%;
+  background-color: var(--light-grey);
+  border-radius: 5px;
+  border: solid 1px var(--grey);
+  box-shadow: var(--light-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  overflow: hidden;
+}
+
+.publi-card .publi-card-header {
+  padding: 0.5rem;
+}
+
+.publi-card .author-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publi-card .author-container .author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.publi-card .author-container .author-info p {
+  font-size: 0.8em;
+}
+
+.publi-card .author-container .feedback-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-left: auto;
+}
+
+.publi-card .author-container .feedback-details .feedback {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8em;
+}
+
+.publi-card .publi-content {
+  background-color: var(--white);
+  font-size: 0.9em;
+  padding: 0.3rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.publi-card .publi-content p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.publi-card .publi-content .see-more {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.8em;
+}
+
+@media screen and (min-width: 1024px) {
+  .publi-card {
+    width: 48%;
+  }
+}

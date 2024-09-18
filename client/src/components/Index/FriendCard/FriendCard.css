@@ -1,0 +1,35 @@
+.friend-card {
+  display: flex;
+  gap: 0.3rem;
+  font-size: 0.8em;
+}
+
+.friend-card .friend-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.1rem 0.3rem;
+}
+
+.friend-card-content .add-friend:hover {
+  text-decoration: underline;
+}
+
+.friend-card .user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.friend-card .add-friend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.friend-card .add-friend p {
+  margin-bottom: -2px;
+}
+
+.friend-card .add-friend p:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,12 @@
+.publication-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+  .publication-page {
+    width: 50vw;
+    flex: none;
+  }
+}

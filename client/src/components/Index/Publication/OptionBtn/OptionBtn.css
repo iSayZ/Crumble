@@ -1,0 +1,61 @@
+.option-btn-group {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+}
+
+.btn-option {
+  height: 24px;
+  width: 24px;
+  border-radius: 2.5px;
+}
+
+.btn-option:hover {
+  background-color: var(--grey);
+}
+
+.btn-option.active {
+  background-color: var(--grey);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-option.active:hover {
+  background-color: var(--light-grey);
+  border-radius: 0;
+}
+
+.option-menu {
+  display: none;
+  flex-direction: column;
+  background-color: var(--grey);
+  border-radius: 2.5px;
+  border-top-right-radius: 0;
+  position: absolute;
+  right: 0;
+  top: 24px;
+  z-index: 3;
+}
+
+.option-menu.active {
+  display: flex;
+}
+
+.option-menu .option-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.3rem;
+}
+
+.option-menu .option-choice.bin {
+  margin-left: -2px;
+}
+
+.option-menu .option-choice .pen {
+  margin-right: 1px;
+}
+
+.option-choice:hover {
+  background-color: var(--light-grey);
+}

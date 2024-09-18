@@ -1,0 +1,50 @@
+.friendships-container .friendship-card {
+  background-color: var(--grey);
+  width: 45%;
+  max-width: 12rem;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--light-shadow);
+  position: relative;
+  cursor: pointer;
+}
+
+.friendships-container .friendship-card .btn {
+  padding: 0 0.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+  box-shadow: var(--light-shadow);
+  z-index: 5;
+}
+
+.friendships-container .friendship-card .friendship-avatar {
+  width: 100%;
+  height: 10rem;
+  overflow: hidden;
+}
+
+.friendships-container .friendship-card .friendship-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.friendships-container .friendship-card .friendship-profile {
+  padding: 0.3rem;
+}
+
+.friendships-container .friendship-card .friendship-profile h4 {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}

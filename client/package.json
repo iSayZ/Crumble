@@ -1,0 +1,48 @@
+{
+  "name": "@harmonia/client",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "prettier": "prettier --write .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource/roboto": "^5.0.13",
+    "@mui/icons-material": "^5.16.1",
+    "@mui/material": "^5.16.1",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "axios": "^1.7.2",
+    "dompurify": "^3.1.6",
+    "js-cookie": "^3.0.5",
+    "lodash": "^4.17.21",
+    "prop-types": "^15.8.1",
+    "quill": "^2.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-google-recaptcha": "^3.1.0",
+    "react-google-recaptcha-v3": "^1.10.1",
+    "react-quill": "^2.0.0",
+    "react-router-dom": "^6.23.0",
+    "socket.io-client": "^4.7.5",
+    "styled-components": "^6.1.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "prettier": "^3.2.5",
+    "vite": "^5.2.11"
+  },
+  "lint-staged": {
+    "*.{html,scss,css}": "prettier --check",
+    "*.{jsx,js}": "eslint --report-unused-disable-directives"
+  }
+}

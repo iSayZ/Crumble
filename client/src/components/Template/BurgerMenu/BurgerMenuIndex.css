@@ -1,0 +1,75 @@
+.burger-menu-index {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 80%;
+  background-color: var(--light-grey);
+  box-shadow: var(--shadow-container);
+  color: var(--black);
+  z-index: 9;
+  padding: 1rem;
+  padding-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.1em;
+}
+
+.burger-menu-index hr {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.burger-menu-index .profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.burger-menu-index .profile-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.burger-menu-index .profile-container .avatar {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--shadow-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-menu-index .profile-container .avatar img {
+  object-position: center;
+  object-fit: cover;
+}
+
+.burger-menu-index .profile-container .profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.burger-menu-index nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.burger-menu-index nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
