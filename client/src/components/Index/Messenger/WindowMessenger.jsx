@@ -20,8 +20,8 @@ function WindowMessenger() {
   useEffect(() => {
     if (auth.account.id_account) {
       socketRef.current.emit("userConnected", auth.account.id_account);
-
-      socketRef.current.on("receiveMessage", (msg) => {
+  
+      const handleReceiveMessage = (msg) => {
         setConversation((prevConversation) => {
           if (
             prevConversation &&
@@ -34,9 +34,17 @@ function WindowMessenger() {
           }
           return prevConversation;
         });
-      });
+      };
+  
+      socketRef.current.on("receiveMessage", handleReceiveMessage);
+  
+      // Cleanup function
+      return () => {
+        socketRef.current.off("receiveMessage", handleReceiveMessage);
+      };
     }
   }, [auth.account]);
+  
 
   const getData = useCallback(
     debounce(async () => {

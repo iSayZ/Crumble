@@ -3,10 +3,15 @@ import "./PublicationCard.css";
 import { Avatar } from "@mui/material";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import MessageIcon from "@mui/icons-material/Message";
+import DOMPurify from "dompurify";
 import { Link } from "react-router-dom";
 import { calculateElapsedTime } from "../../../services/calculTime";
 
 function PublicationCard({ publication }) {
+
+  // Clean the html code for securize
+  const cleanContent = DOMPurify.sanitize(publication.content);
+
   return (
     <div className="publi-card">
       <div className="publi-card-header">
@@ -43,7 +48,7 @@ function PublicationCard({ publication }) {
         </div>
       </div>
       <div className="publi-content">
-        <p>{publication.content}</p>
+        <p dangerouslySetInnerHTML={{ __html: cleanContent }} />
         <Link
           to={`/publication/${publication.id_publication}`}
           className="btn see-more"
