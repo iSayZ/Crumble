@@ -153,7 +153,7 @@ function Profile() {
   const handleCoverageChange = (event) => {
     const file = event.target.files[0];
     const extension = getExtension(file.name);
-    const allowedExtensions = ["png", "jpg", "jpeg", "webp"];
+    const allowedExtensions = ["png", "jpg", "jpeg", "webp", "avif"];
     if (allowedExtensions.includes(extension) && file.size <= 7000000) {
       setCoverage(file);
 
@@ -215,7 +215,7 @@ function Profile() {
   const handleAvatarChange = (event) => {
     const file = event.target.files[0];
     const extension = getExtension(file.name);
-    const allowedExtensions = ["png", "jpg", "jpeg", "webp"];
+    const allowedExtensions = ["png", "jpg", "jpeg", "webp", "avif"];
     if (allowedExtensions.includes(extension) && file.size <= 7000000) {
       setAvatar(file);
 
@@ -449,7 +449,7 @@ function Profile() {
         <Popup
           closePopup={handleCloseError}
           title="Erreur : Format d'image non valide"
-          content="L'image que vous avez sélectionnée doit être au format PNG, JPEG/JPG ou WEBP.<br><br>Veuillez vérifier l'extension de votre fichier et réessayer avec un format supporté."
+          content="L'image que vous avez sélectionnée doit être au format PNG, JPEG/JPG, WEBP ou AVIF.<br><br>Veuillez vérifier l'extension de votre fichier et réessayer avec un format supporté."
           choiceTwo="D'accord"
           actionTwo={handleCloseError}
         />

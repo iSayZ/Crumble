@@ -11,7 +11,7 @@ const socketConversations = new Map(); // Map to store conversations by socket.i
 const initSocket = (server) => {
   const io = new Server(server, {
     cors: {
-      origin: "http://localhost:3000", // URL of client
+      origin: process.env.CLIENT_URL, // URL of client
       methods: ["GET", "POST"],
     },
   });
@@ -68,7 +68,7 @@ const initSocket = (server) => {
         }
         try {
           const response = await axios.post(
-            "http://localhost:3310/api/messages",
+            `http://localhost:${process.env.APP_PORT}/api/messages`,
             {
               conversationId,
               id_account: sender,
